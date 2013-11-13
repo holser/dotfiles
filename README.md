@@ -1,9 +1,15 @@
 # Install
 
-To install or update run:
+To install dotfiles
 
 ```bash
 curl -L https://github.com/holser/dotfiles/raw/master/install.sh | /bin/bash
+```
+
+To install or update vim:
+
+```bash
+curl -L https://github.com/holser/dotfiles/raw/master/vim_install.sh | /bin/bash
 ```
 
 To launch tmux by default add the following lines into *.bashrc*
