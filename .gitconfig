@@ -1,0 +1,35 @@
+[user]
+    name = Sergii Golovatiuk 
+    email = holser@gmail.com
+
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    pager=less -R
+
+[credential]
+    helper = cache --timeout=3600
+
+[color]
+    ui = true
+    diff = true
+    grep = true
+    status = true
+
+[color "branch"]
+    current = yellow reverse
+    remote = green
+    local = yellow
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[color "diff"]
+    whitespace = red reverse
