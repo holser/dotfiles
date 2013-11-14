@@ -27,7 +27,6 @@ filetype plugin on " enable filetype-specific indenting
 filetype indent on " Enable filetype-specific plugins
 
 syntax on " syntax highlight
-set hlsearch " search highlighting
 
 " On Windows, use $HOME/.vim instead of vimfiles
 if has('win32') || has ('win64')
@@ -44,13 +43,17 @@ endif
 set clipboard+=unnamed " yank to the system register (*) by default
 set wildmenu " wild char completion menu
 
+set hlsearch " search highlighting
+set incsearch " incremental search
+
 " Ingore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
+set nobackup " no *~ backup files
+set noswapfile
 
 set number "Line numbering is on
 set autoindent " auto indentation
-set incsearch " incremental search
-set nobackup " no *~ backup files
+set smartindent " Use smart indendation if there is no indent file 
 set copyindent " copy the previous indentation on autoindenting
 set ignorecase " ignore case when searching
 set smartcase " ignore case if search pattern is all lowercase, case-sensitive otherwise
@@ -73,6 +76,25 @@ highlight lCursor guifg=NONE guibg=Blue
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,latin1
+set fileencodings=utf-8,cp1251,latin1
+set fileformats=unix,dos,mac
 
 set ls=2 " Allways show status line
+set confirm
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+
+" Hide matches on double esc
+nnoremap <esc><esc> :noh<CR>
+
+" Use tabs to move between bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Ctrl-jklm  changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" Open NerdTree
+map <leader>n :NERDTreeToggle<CR>
