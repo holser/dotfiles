@@ -5,7 +5,7 @@ function link_file {
     target="${HOME}/$1"
 
     if [ -e "${target}" ]; then
-        mv $target $target.bak
+        mv ${target}{,.$(date +%F).bak}
     fi
 
     ln -sf ${source} ${target}
