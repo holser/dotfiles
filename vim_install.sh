@@ -21,9 +21,7 @@ else
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
     pushd ~/.dotfiles
-    for f in .vimrc ; do
-        link_file $f
-    done
+    link_file .vimrc 
     popd
     
     vim -u ~/.dotfiles/.vimrc - +BundleInstall +qall
