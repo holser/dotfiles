@@ -41,6 +41,7 @@ brew cask alfred link
 brew cask install google-chrome 
 brew cask install mou 
 brew cask install dropbox 
+brew cask install github
 brew cask install utorrent
 brew cask install evernote 
 brew cask install hazel
@@ -53,10 +54,11 @@ brew cask install onepassword
 brew cask install clean-my-mac 
 brew cask install the-unarchiver 
 brew cask install geek-bench 
-brew cask install vagrant 
 brew cask install skype
+brew cask install shuttle
 brew cask install macupdate-desktop
 brew cask install things
 brew cask install sourcetree
+brew cask install vagrant 
 
 brew cleanup

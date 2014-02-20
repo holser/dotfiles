@@ -4,7 +4,7 @@ function link_file {
     source="${PWD}/$1"
     target="${HOME}/$1"
 
-    if [ -e "${target}" ]; then
+    if [ -f "${target}" ]; then
         mv ${target}{,.$(date +%F).bak}
     fi
 
