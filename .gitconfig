@@ -1,35 +1,35 @@
 [user]
-    name = Sergii Golovatiuk 
-    email = holser@gmail.com
-
-[core]
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    pager=less -R
-
+	name = Sergii Golovatiuk
+	email = holser@gmail.com
+[github]
+    user = holser
 [credential]
-    helper = cache --timeout=3600
-
+    helper = cache
 [color]
+    ui = always
     ui = true
-    diff = true
-    grep = true
-    status = true
-
 [color "branch"]
-    current = yellow reverse
-    remote = green
+    current = yellow reserve
     local = yellow
-
+    remote = green
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
-    new = green bold
-
+    whitespace = red reverse
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
-
-[color "diff"]
-    whitespace = red reverse
+[core]
+	excludesfile = /Users/sg/.gitignore_global
+    whitespace = fix, -intent-with-non-tab, trailing-space, cr-at-eol
+[alias]
+    changes = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --date-order
+    lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --date-order --all
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
