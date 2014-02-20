@@ -15,7 +15,7 @@ if [ -d ~/.dotfiles ]; then
     pushd ~/.dotfiles/
     git pull origin master
     popd
-    vim -u ~/.dotfiles/.vimrc - +BundleInstall! +BundleClean! +qall
+    vim -u ~/.dotfiles/.vimrc +BundleInstall! +BundleClean! +qall
 else
     git clone https://github.com/holser/dotfiles.git ~/.dotfiles
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -24,5 +24,5 @@ else
     link_file .vimrc 
     popd
     
-    vim -u ~/.dotfiles/.vimrc - +BundleInstall +qall
+    vim -u ~/.dotfiles/.vimrc +BundleInstall +qall
 fi

@@ -36,6 +36,7 @@ brew install vim --override-system-vi
 brew install watch
 brew install wget --enable-iri
 
+brew cask install anki
 brew cask install alfred
 brew cask alfred link
 brew cask install google-chrome 
@@ -57,8 +58,12 @@ brew cask install geek-bench
 brew cask install skype
 brew cask install shuttle
 brew cask install macupdate-desktop
+brew cask install mplayerx
 brew cask install things
 brew cask install sourcetree
+brew cask install steam
+brew cask install xmind
+brew cask install xld
 brew cask install vagrant 
 
 brew cleanup
