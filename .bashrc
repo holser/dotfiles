@@ -20,9 +20,5 @@ export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-fi
-
 PATH=$HOME/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
