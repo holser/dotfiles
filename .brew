@@ -36,18 +36,22 @@ brew install vim --override-system-vi
 brew install watch
 brew install wget --enable-iri
 
+brew cleanup
+
 brew cask install anki
 brew cask install alfred
 brew cask alfred link
 brew cask install google-chrome 
 brew cask install mou 
 brew cask install dropbox 
+brew cask install gimp
 brew cask install github
 brew cask install utorrent
 brew cask install evernote 
 brew cask install hazel
 brew cask install iterm2 
 brew cask install java
+brew cask install join-me
 brew cask install macvim 
 brew cask install virtualbox 
 brew cask install firefox 
@@ -62,8 +66,9 @@ brew cask install mplayerx
 brew cask install things
 brew cask install sourcetree
 brew cask install steam
+brew cask install vagrant 
 brew cask install xmind
 brew cask install xld
-brew cask install vagrant 
+brew cask install xquartz
 
-brew cleanup
+brew cask cleanup
