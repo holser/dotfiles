@@ -70,10 +70,10 @@ systemsetup -setrestartfreeze on
 defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Automatically illuminate built-in MacBook keyboard in low light
-
 defaults write com.apple.BezelServices kDim -bool true
+
 # Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
+defaults write com.apple.BezelServices kDimTime -int 60 
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -179,7 +179,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en" "ru" "uk"
@@ -197,7 +197,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Empty Trash securely by default
+# Disable Trash securely by default
 defaults write com.apple.finder EmptyTrashSecurely -bool false
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
