@@ -16,6 +16,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 't9md/vim-chef'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
+Bundle 'plasticboy/vim-markdown'
 
 " General Settings
 
