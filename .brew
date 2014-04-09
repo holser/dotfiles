@@ -21,6 +21,7 @@ brew install berkeley-db
 brew install brew-cask
 brew install briss
 brew install git
+brew install gpg
 brew install jq
 brew install mtr
 brew install openssl
@@ -41,11 +42,13 @@ brew cleanup
 brew cask install anki
 brew cask install alfred
 brew cask alfred link
+brew cask install colloquy
 brew cask install google-chrome 
 brew cask install mou 
 brew cask install dropbox 
 brew cask install gimp
 brew cask install github
+brew cask install gpgtools
 brew cask install utorrent
 brew cask install evernote 
 brew cask install hazel
