@@ -37,7 +37,7 @@ if has('win32') || has ('win64')
 endif
 
 if has("gui_running")   " GUI colors and font settings
-    set guifont=Consolas:h12
+    set guifont=Consolas:h14
     set background=dark
     colorscheme solarized 
     set guioptions-=r   " Removing right scroll bar
@@ -85,6 +85,13 @@ set fileformats=unix,dos,mac
 set ls=2                " Allways show status line
 set confirm
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+
+" Restore cursor position and folds
+if has("autocmd")
+    set viewoptions=cursor,folds
+    au BufWinLeave * mkview
+    au BufWinEnter * silent loadview
+endif
 
 " Hide matches on double esc
 nnoremap <esc><esc> :noh<CR>
