@@ -1,5 +1,5 @@
 #setting vi mode
-set -o vi
+#set -o vi
 
 # don't put duplicate line in the history
 export HISTCONTROL=ignoreboth:erasedups:ignorespace

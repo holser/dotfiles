@@ -1,35 +1,120 @@
 [user]
 	name = Sergii Golovatiuk
-	email = holser@gmail.com
+	email = sgolovatiuk@mirantis.com
 [github]
     user = holser
 [credential]
-    helper = cache
+    helper = cache --timeout=3600
 [color]
-    ui = always
     ui = true
+    diff = true
+    grep = true
+    status = true
 [color "branch"]
-    current = yellow reserve
+    current = red 
     local = yellow
     remote = green
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
-    whitespace = red reverse
+    new = yellow
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
 [core]
 	excludesfile = /Users/sg/.gitignore_global
-    whitespace = fix, -intent-with-non-tab, trailing-space, cr-at-eol
-[alias]
-    changes = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --date-order
-    lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --date-order --all
+    editor = /usr/bin/vim
+    pager = less -R
+    autocrlf = input
+    safecrlf = true
+    whitespace = fix, -intent-with-non-tab, space-before-tab, trailing-space, cr-at-eol
+[diff]
+    renames = copy
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[mergetool]
+    keepBackup = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[log]
+    decorate = full
+[push]
+      default = matching
+[gitreview]
+	username = holser
+	username = holser
+[alias]
+  # Base commands
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  cia = commit --allow-empty-message -a
+
+  # Stash commands
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+
+  # Show history
+  history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  changes = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --date-order
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+  # Show all prfiles
+  ls = !git rev-parse --abbrev-ref HEAD | xargs git ls-tree -r --full-tree --full-name --name-only
+
+  # Push into current remote branch
+  pc = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+
+  # Show untracked files
+  stu = status --untracked-files=no
+
+  # Show git commands
+  commitmmands = help -a
+
+  # Get object type
+  type = cat-file -t
+
+  # Gett file info
+  info = cat-file -p
+
+  # Show commit logs
+  logs = Show !git shortlog --summary | sort --reverse --numeric-sort
+
+  # Show conflicts
+  conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs  grep -El '<<<<<<<|=======|>>>>>>>'
+
+  # Show unmergd files
+  unmerged = files !git ls-files --unmerged | cut -f2 | sort -u
+
+  # Show aliases
+  aliases = !git config -l | grep alias | cut -c 7-
+
+  # Find files
+  find = !git ls-files -r HEAD | grep -ii
+
+  # Remove files which have been diffeleted
+  remove = !git ls-files -z --deleted | xargs -0 git rm
+
+  # Ignore a file
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) |gitignore echo $1 >> .gitignore
+
+  # Assume a file as unchanged
+  assume = !gitt update-index --assume-unchanged
+
+  # Unassume a file
+  unassume = !gitignoret update-index --no-assume-unchanged
+
+  # Show assumed files
+  assumed = !git ls-files -v | grep ^h | cut -c 3-
+
+  # Pull from remote repository
+  fork = !git config --get remote.origin.url | xargs git pull
