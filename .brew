@@ -1,1 +1,63 @@
-/Users/sg/.dotfiles/.brew
+#!/bin/bash
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+brew update
+brew upgrade
+brew tap homebrew/completions
+brew tap phinze/homebrew-cask
+
+brew install arping
+brew install aspell
+brew install brew-cask
+brew install git
+brew install gpg
+brew install jq
+brew install mtr
+brew install openssl
+brew install packer
+brew install parallel
+brew install pv
+brew install ssh-copy-id
+brew install tmux
+brew install tmuxinator-completion
+brew install vagrant
+brew install vagrant-completion
+brew install vim --override-system-vi
+brew install watch
+brew install wget --enable-iri
+brew cleanup
+
+brew cask install alfred
+brew cask alfred link
+brew cask install anki
+brew cask install colloquy
+brew cask install dropbox
+brew cask install evernote
+brew cask install firefox
+brew cask install gimp
+brew cask install github
+brew cask install google-chrome
+brew cask install google-hangouts
+brew cask install gpgtools
+brew cask install hazel
+brew cask install iterm2
+brew cask install little-snitch
+brew cask install macvim
+brew cask install mplayerx
+brew cask install onepassword
+brew cask install skype
+brew cask install steam
+brew cask install the-unarchiver
+brew cask install things
+brew cask install utorrent
+brew cask install vagrant
+brew cask install virtualbox
+brew cask install wireshark
+brew cask install xld
+brew cask install xquartz
+brew cask cleanup
