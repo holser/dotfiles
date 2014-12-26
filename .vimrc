@@ -42,7 +42,7 @@ endif
 if has("gui_running")   " GUI colors and font settings
     set guifont=Consolas:h14
     set background=dark
-    colorscheme solarized 
+    colorscheme solarized
     set guioptions-=r   " Removing right scroll bar
 endif
 
@@ -119,3 +119,6 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 set nofoldenable
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
