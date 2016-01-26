@@ -32,13 +32,10 @@ brew install watch
 brew install wget --enable-iri
 brew cleanup
 
-brew cask install alfred
-brew cask alfred link
+brew cask install aerial
 brew cask install anki
-brew cask install colloquy
 brew cask install dropbox
 brew cask install evernote
-brew cask install firefox
 brew cask install gimp
 brew cask install github
 brew cask install google-chrome
