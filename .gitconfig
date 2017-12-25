@@ -1,62 +1,61 @@
 [user]
-	name = Sergii Golovatiuk
-	email = sgolovatiuk@mirantis.com
+  name = Sergii Golovatiuk
+  email = sgolovat@redhat.com
 [github]
-    user = holser
+  user = holser
 [credential]
-    helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [color]
-    ui = true
-    diff = true
-    grep = true
-    status = true
+  ui = true
+  diff = true
+  grep = true
+  status = true
 [color "branch"]
-    current = red 
-    local = yellow
-    remote = green
+  current = red 
+  local = yellow
+  remote = green
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = yellow
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = yellow
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+  added = yellow
+  changed = green
+  untracked = cyan
 [core]
-	excludesfile = /Users/sg/.gitignore_global
-    editor = /usr/bin/vim
-    pager = less -R
-    autocrlf = input
-    safecrlf = true
-    whitespace = fix, -intent-with-non-tab, space-before-tab, trailing-space, cr-at-eol
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
+  pager = less -R
+  autocrlf = input
+  safecrlf = true
+  whitespace = fix, -intent-with-non-tab, space-before-tab, trailing-space, cr-at-eol
 [diff]
-    renames = copy
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  renames = copy
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
-    keepBackup = true
+  keepBackup = true
+  prompt = false
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [log]
-    decorate = full
+  decorate = full
 [push]
-      default = matching
+  default = matching
 [gitreview]
-	username = holser
-	username = holser
+  username = holser
+  username = holser
 [alias]
   # Base commands
   ci = commit
   br = branch
   co = checkout
   df = diff
-  cia = commit --allow-empty-message -a
+  ia = commit --allow-empty-message -a
 
   # Stash commands
   sl = stash list
@@ -94,6 +93,9 @@
 
   # Show unmergd files
   unmerged = files !git ls-files --unmerged | cut -f2 | sort -u
+
+  # Uncommit 
+  uncomit = !git reset --soft $(git log --format=%H -2 | tail -1)
 
   # Show aliases
   aliases = !git config -l | grep alias | cut -c 7-
