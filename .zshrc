@@ -1,11 +1,20 @@
-# Created by newuser for 5.0.5
-autoload -Uz compinit
-compinit
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-alias ll='ls -lahG'
-alias l='ls -lahG'
+path=(
+  /usr/local/opt/coreutils/libexec/gnubin
+  /usr/local/opt/findutils/libexec/gnubin
+  /usr/local/opt/curl/bin
+  $path
+)
 
-LANG=en_US.UTF-8
-LANGUAGE=en_US.UTF-8
-LC_CTYPE=en_US.UTF-8
-LC_ALL=en_US.UTF-8
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+source .aliases
