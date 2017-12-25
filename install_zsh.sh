@@ -16,7 +16,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^(README.md|zshrc|zpreztorc)(
 done
 
 # Download my favourite theme
-curl -sSL https://gist.githubusercontent.com/wikimatze/4c2fbaf8ebe1e8ce0c1f/raw/ed34a873ab0be5dc687b8047eb1912afabaa2014/prompt_wikimatze_setup > .zprezto/modules/prompt/functions/prompt_wikimatze_setup 
+curl -sSL https://gist.githubusercontent.com/wikimatze/4c2fbaf8ebe1e8ce0c1f/raw/ed34a873ab0be5dc687b8047eb1912afabaa2014/prompt_wikimatze_setup > "${ZDOTDIR:-$HOME}"/.zprezto/modules/prompt/functions/prompt_wikimatze_setup 
 
 function link_file {
     source="${PWD}/$1"
