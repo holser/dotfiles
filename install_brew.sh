@@ -70,6 +70,9 @@ brew cask install xld
 brew cask install xquartz
 brew cask cleanup
 
+brew tap caskroom/drivers
+brew cask install garmin-express
+
 mas install 747648890  # Telegram
 mas install 443987910  # 1Password
 mas install 1262957439 # Textual 7
