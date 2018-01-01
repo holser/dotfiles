@@ -11,11 +11,11 @@ function link_file {
     ln -sf ${source} ${target}
 }
 
-if [ -d ~/.dotfiles ]; then
-    pushd ~/.dotfiles/
-    git pull origin master
-    for file in .[a-zA-Z]*; do
-        link_file $file 
-    done 
-    popd
-fi
+[ -d ~/.dotfiles ] && pushd ~/.dotfiles/
+
+git pull origin master
+for file in .[a-zA-Z]*; do
+    link_file $file 
+done 
+
+[ -d ~/.dotfiles ] && popd
