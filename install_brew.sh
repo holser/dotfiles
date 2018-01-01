@@ -54,6 +54,7 @@ brew install wget --enable-iri
 brew install xz
 brew cleanup
 
+brew cask install 1password
 brew cask install aerial
 brew cask install blue-jeans
 brew cask install chromium
@@ -74,6 +75,5 @@ brew tap caskroom/drivers
 brew cask install garmin-express
 
 mas install 747648890  # Telegram
-mas install 443987910  # 1Password
 mas install 1262957439 # Textual 7
 mas install 803453959  # Slack
