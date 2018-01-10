@@ -30,6 +30,7 @@ brew install gawk
 brew install git
 brew install git-review
 brew install gnu-sed
+brew install gnu-tar
 brew install grep
 brew install gpg
 brew install htop
