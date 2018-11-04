@@ -1,122 +1,130 @@
 [user]
-  name = Sergii Golovatiuk
-  email = sgolovat@redhat.com
+    name = Sergii Golovatiuk
+    email = sgolovat@redhat.com
 [github]
-  user = holser
+    user = holser
 [credential]
-  helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [color]
-  ui = true
-  diff = true
-  grep = true
-  status = true
+    ui = true
+    diff = true
+    grep = true
+    status = true
 [color "branch"]
-  current = red 
-  local = yellow
-  remote = green
+    current = red
+    local = yellow
+    remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = yellow
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = yellow
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [core]
-  editor = /usr/bin/vim
-  excludesfile = ~/.gitignore_global
-  pager = less -R
-  autocrlf = input
-  safecrlf = true
-  whitespace = fix, -intent-with-non-tab, space-before-tab, trailing-space, cr-at-eol
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    pager = less -R
+    autocrlf = input
+    safecrlf = true
+    whitespace = fix, -intent-with-non-tab, space-before-tab, trailing-space, cr-at-eol
+[i18n]
+    filesEncoding = utf-8
 [diff]
-  renames = copy
-  tool = vimdiff
+    renames = copy
+    tool = vimdiff
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+    tool = vimdiff
+    conflictstyle = diff3
 [mergetool]
-  keepBackup = true
-  prompt = false
+    keepBackup = true
+    prompt = false
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
 [log]
-  decorate = full
+    decorate = full
 [push]
-  default = matching
+    default = matching
 [gitreview]
-  username = holser
-  username = holser
+    username = holser
+    username = holser
 [alias]
-  # Base commands
-  ci = commit
-  br = branch
-  co = checkout
-  df = diff
-  ia = commit --allow-empty-message -a
+    # Base commands
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    ia = commit --allow-empty-message -a
 
-  # Stash commands
-  sl = stash list
-  sa = stash apply
-  ss = stash save
+    # Stash commands
+    sl = stash list
+    sa = stash apply
+    ss = stash save
 
-  # Show history
-  history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  changes = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --date-order
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    # Show history
+    history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    changes = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --date-order
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
-  # Show all prfiles
-  ls = !git rev-parse --abbrev-ref HEAD | xargs git ls-tree -r --full-tree --full-name --name-only
+    # Show all prfiles
+    ls = !git rev-parse --abbrev-ref HEAD | xargs git ls-tree -r --full-tree --full-name --name-only
 
-  # Push into current remote branch
-  pc = !git rev-parse --abbrev-ref HEAD | xargs git push origin
+    # Push into current remote branch
+    pc = !git rev-parse --abbrev-ref HEAD | xargs git push origin
 
-  # Show untracked files
-  stu = status --untracked-files=no
+    # Show untracked files
+    stu = status --untracked-files=no
 
-  # Show git commands
-  commitmmands = help -a
+    # Show git commands
+    commitmmands = help -a
 
-  # Get object type
-  type = cat-file -t
+    # Get object type
+    type = cat-file -t
 
-  # Gett file info
-  info = cat-file -p
+    # Gett file info
+    info = cat-file -p
 
-  # Show commit logs
-  logs = Show !git shortlog --summary | sort --reverse --numeric-sort
+    # Show commit logs
+    logs = Show !git shortlog --summary | sort --reverse --numeric-sort
 
-  # Show conflicts
-  conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs  grep -El '<<<<<<<|=======|>>>>>>>'
+    # Show conflicts
+    conflicts = !git ls-files --unmerged | cut -f2 | sort -u | xargs grep -El '<<<<<<<|=======|>>>>>>>'
 
-  # Show unmergd files
-  unmerged = files !git ls-files --unmerged | cut -f2 | sort -u
+    # Show unmergd files
+    unmerged = files !git ls-files --unmerged | cut -f2 | sort -u
 
-  # Uncommit 
-  uncomit = !git reset --soft $(git log --format=%H -2 | tail -1)
+    # Uncommit
+    uncomit = !git reset --soft $(git log --format=%H -2 | tail -1)
 
-  # Show aliases
-  aliases = !git config -l | grep alias | cut -c 7-
+    # Show aliases
+    aliases = !git config -l | grep alias | cut -c 7-
 
-  # Find files
-  find = !git ls-files -r HEAD | grep -ii
+    # Find files
+    find = !git ls-files -r HEAD | grep -ii
 
-  # Remove files which have been diffeleted
-  remove = !git ls-files -z --deleted | xargs -0 git rm
+    # Remove files which have been diffeleted
+    remove = !git ls-files -z --deleted | xargs -0 git rm
 
-  # Ignore a file
-  ignore = !([ ! -e .gitignore ] && touch .gitignore) |gitignore echo $1 >> .gitignore
+    # Ignore a file
+    ignore = !([ ! -e .gitignore ] && touch .gitignore) |gitignore echo $1 >> .gitignore
 
-  # Assume a file as unchanged
-  assume = !gitt update-index --assume-unchanged
+    # Assume a file as unchanged
+    assume = !gitt update-index --assume-unchanged
 
-  # Unassume a file
-  unassume = !gitignoret update-index --no-assume-unchanged
+    # Unassume a file
+    unassume = !gitignoret update-index --no-assume-unchanged
 
-  # Show assumed files
-  assumed = !git ls-files -v | grep ^h | cut -c 3-
+    # Show assumed files
+    assumed = !git ls-files -v | grep ^h | cut -c 3-
 
-  # Pull from remote repository
-  fork = !git config --get remote.origin.url | xargs git pull
+    # Pull from remote repository
+    fork = !git config --get remote.origin.url | xargs git pull

@@ -1,13 +1,13 @@
 # Compiled Ruby
 *.gem
 
-# VIM Swap 
+# VIM Swap
 *.swp
 
 # Compiled Python
 *.pyc
 
-# Folder View Configuration 
+# Folder View Configuration
 .DS_Store
 Desktop.ini
 Icon?

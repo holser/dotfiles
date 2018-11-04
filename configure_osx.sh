@@ -117,7 +117,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write com.apple.BezelServices kDim -bool true
 
 # Turn off keyboard illumination when computer is not used for 1 minute
-defaults write com.apple.BezelServices kDimTime -int 60 
+defaults write com.apple.BezelServices kDimTime -int 60
 
 # Turn on Full Keyboard Access: In windows and dialogs press Tab to move
 # keyboard between focus
@@ -154,7 +154,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad \
     TrackpadThreeFingerHorizSwipeGesture -int 1
 
 ###############################################################################
-# MenuBar 
+# MenuBar
 ###############################################################################
 
 # Menu bar: disable transparency
@@ -177,11 +177,11 @@ defaults write com.apple.systemuiserver menuExtras -array \
 # Dock                                                                        #
 ###############################################################################
 
-# Set Dock orientation to the right 
-defaults write com.apple.dock orientation "right" 
+# Set Dock orientation to the right
+defaults write com.apple.dock orientation "right"
 
 # Set the icon size of Dock items to 48 pixels
-defaults write com.apple.dock tilesize -int 48 
+defaults write com.apple.dock tilesize -int 48
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -258,7 +258,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 ###############################################################################
-# Finder                                                                      # 
+# Finder                                                                      #
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons

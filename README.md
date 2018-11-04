@@ -1,28 +1,34 @@
-# Install
+# Scripts and dotfiles for workstation configuration
 
-To Configure brew and OSX
+### OS X Configuration
 
 ```bash
-curl -L https://github.com/holser/dotfiles/raw/master/osx_install.sh | /bin/bash
+curl -sL https://raw.githubusercontent.com/holser/dotfiles/master/configure_osx.sh | /bin/bash
 ```
 
-To install or update vim
+### Brew && OSX Software Installation
 
 ```bash
-curl -L https://github.com/holser/dotfiles/raw/master/vim_install.sh | /bin/bash
+curl -sL https://raw.githubusercontent.com/holser/dotfiles/master/install_osx_software.sh | /bin/bash
 ```
 
-To install dotfiles
+### vim installation and confiration
 
 ```bash
-curl -L https://github.com/holser/dotfiles/raw/master/dot_install.sh | /bin/bash
+curl -sL https://raw.githubusercontent.com/holser/dotfiles/master/install_vim.sh | /bin/bash
+```
+
+### zpresto installation and configuration
+
+```bash
+curl -sL https://raw.githubusercontent.com/holser/dotfiles/master/install_zsh.sh | /bin/zsh
 ```
 
 To launch tmux by default add the following lines into *.bashrc*
 
 ```bash
 if [[ "$TERM" != "screen-256color" ]]; then
-    tmux -2 attach-session -t "$USER" || tmux -2 new-session -s "$USER" 
+    tmux -2 attach-session -t "$USER" || tmux -2 new-session -s "$USER"
     exit
 fi
 ```

@@ -1,7 +1,4 @@
 # Customize to your needs...
-alias python=/usr/local/bin/python2.7
-alias pip=/usr/local/bin/pip2
-alias vim=/usr/local/bin/nvim
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
