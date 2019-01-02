@@ -76,6 +76,7 @@ brew cask install virtualbox
 brew cask install viscosity
 brew cask install xld
 brew cask install xquartz
+brew cask install zoomus
 brew cask cleanup
 
 mas install 747648890  # Telegram

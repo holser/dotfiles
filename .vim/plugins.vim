@@ -65,7 +65,7 @@ Plug 'mhinz/vim-signify'
 " ==============
 " Python Support
 " ==============
-Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
+" Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
 " Python code completion and refactoring
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
