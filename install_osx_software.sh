@@ -67,10 +67,10 @@ brew cask install garmin-express
 brew cask install gimp
 brew cask install hazel
 brew cask install highsierramediakeyenabler
+brew cask install iina
 brew cask install iterm2
 brew cask install jollysfastvnc
 brew cask install little-snitch
-brew cask install mpv
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install viscosity
