@@ -79,7 +79,7 @@ set colorcolumn=80
 " Show line numbers
 set number relativenumber
 " Diff shows vertical split by default
-set diffopt+=vertical
+" set diffopt+=vertical
 " set show matching parenthesis
 set showmatch
 " highlight search terms

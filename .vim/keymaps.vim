@@ -46,6 +46,7 @@ function! AppendModeline()
     call append(line("$"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+nnoremap <silent> <Leader>m, :set nonumber norelativenumber<CR>:SignifyDisable<CR>
 
 " Highlight extra whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
