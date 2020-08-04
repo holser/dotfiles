@@ -3,10 +3,10 @@
 #
 
 path=(
-  /opt/local/{bin,sbin}
   /usr/local/opt/{coreutils,findutils}/libexec/gnubin
   /usr/local/opt/curl/bin
   /usr/local/opt/openssl/bin
+  /usr/local/opt/python/libexec/bin
   /usr/local/sbin
   $path
 )
@@ -25,6 +25,21 @@ function rolling_slash() {
         printf '%s\b' "${str:$n:1}"
         sleep 1
     done
+}
+
+function add_upgrade_reviewers () {
+  if [ -z "$1" ]; then
+    sha=$(git rev-parse HEAD)
+  else
+    sha="$1"
+  fi
+  ssh -p 29418 holser@review.openstack.org gerrit \
+    set-reviewers -a ccamacho@redhat.com \
+    -a jfrancoa@redhat.com -a dbengt@redhat.com \
+    -a jesse@odyssey4.me -a jistr@redhat.com \
+    -a lbezdick@redhat.com -a mbultel@redhat.com \
+    -a rrasouli@redhat.com -a rbrady@redhat.com \
+    -a sathlang@redhat.com ${sha}
 }
 
 # Generate Random password
