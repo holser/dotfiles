@@ -49,6 +49,7 @@ brew install rsync
 brew install ssh-copy-id
 brew install tmate
 brew install tmux
+brew install tree
 brew install unrar
 brew install vagrant-completion
 brew install vim

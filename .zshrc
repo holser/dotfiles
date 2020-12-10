@@ -7,6 +7,7 @@ path=(
   /usr/local/opt/curl/bin
   /usr/local/opt/openssl/bin
   /usr/local/opt/python/libexec/bin
+  /usr/local/bin
   /usr/local/sbin
   $path
 )
@@ -44,7 +45,7 @@ function add_upgrade_reviewers () {
 
 # Generate Random password
 function generate_pass() {
-    cat /dev/urandom | tr -d -c 'a-zA-Z0-9' | fold -w 16 | head -1
+    cat /dev/urandom | tr -d -c 'a-zA-Z0-9~!@#$%^&*()-_+={}[]|\:' | fold -w 16 | head -1
 }
 
 # Source Prezto.
@@ -54,3 +55,9 @@ fi
 
 source ~/.aliases
 export GOPATH=$HOME/.go
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+source ~/.venv/bin/activate

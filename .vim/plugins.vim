@@ -92,9 +92,9 @@ Plug 'rodjek/vim-puppet'
 " reStructured text
 Plug 'gu-fan/riv.vim', { 'for': 'rst,python' }
 " YAML indentation
-Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
+" Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 " YAML folds
-Plug 'digitalrounin/vim-yaml-folds', { 'for': 'yaml' }
+" Plug 'digitalrounin/vim-yaml-folds', { 'for': 'yaml' }
 " Jinja2 template files
 Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()

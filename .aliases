@@ -81,4 +81,4 @@ done
 # https://github.com/sindresorhus/macos-lock
 alias afk="/usr/local/bin/lock"
 alias screensaver="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
-
+alias cdtemp="cd $(mktemp -d)"
