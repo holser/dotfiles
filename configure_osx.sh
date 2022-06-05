@@ -16,7 +16,7 @@ sudo defaults write \
     NetBIOSName -string "holser"
 
 # Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array "en" "ru" "uk"
+defaults write NSGlobalDomain AppleLanguages -array "en-PL" "pl-PL" "ru-PL" "uk-PL"
 defaults write NSGlobalDomain AppleLocale -string "en_GB@"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
@@ -63,11 +63,17 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 sudo defaults write \
     /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
+# Set menubar digital clock format to HH:mm
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE HH:mm\""
+
+# Time separator flashes every second
+defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true" && killall SystemUIServer
+
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "$HOME/Desktop"
+defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots/"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -197,12 +203,6 @@ defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
-
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -386,9 +386,6 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # Enable the debug menu in Address Book
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-# Enable Dashboard dev mode (allows keeping widgets on the desktop)
-defaults write com.apple.dashboard devmode -bool true
 
 # Enable the debug menu in iCal (pre-10.8)
 defaults write com.apple.iCal IncludeDebugMenu -bool true

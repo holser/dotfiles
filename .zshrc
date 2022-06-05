@@ -36,10 +36,8 @@ function add_upgrade_reviewers () {
   fi
   ssh -p 29418 holser@review.openstack.org gerrit \
     set-reviewers -a ccamacho@redhat.com \
-    -a jfrancoa@redhat.com -a dbengt@redhat.com \
-    -a jesse@odyssey4.me -a jistr@redhat.com \
-    -a lbezdick@redhat.com -a mbultel@redhat.com \
-    -a rrasouli@redhat.com -a rbrady@redhat.com \
+    -a dbengt@redhat.com -a jesse@odyssey4.me -a jistr@redhat.com \
+    -a lbezdick@redhat.com \
     -a sathlang@redhat.com ${sha}
 }
 
