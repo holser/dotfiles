@@ -9,12 +9,13 @@ path=(
   /usr/local/opt/python/libexec/bin
   /usr/local/bin
   /usr/local/sbin
+  $HOME/.local/bin
   $path
 )
 
 function activate_cloud() {
-    source ~/Work/.venv/sgolovat-openrc.sh
-    source ~/Work/.venv/bin/activate
+    source ~/Work/.venvs/.venv/sgolovat-openrc.sh
+    source ~/Work/.venvs/.venv/bin/activate
 }
 # Functions
 # Rolling slash
@@ -58,4 +59,4 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-source ~/.venv/bin/activate
+source ~/.venvs/.venv/bin/activate

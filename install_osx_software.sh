@@ -17,6 +17,7 @@ brew update
 brew upgrade
 
 # Install command-line tools using Homebrew.
+brew install 1password-cli
 brew install ansible
 brew install aria2
 brew install arping
@@ -48,6 +49,7 @@ brew install openshift-cli
 brew install openssl
 brew install openstackclient
 brew install p7zip
+brew install pipx
 brew install pv
 brew install pyenv
 brew install pyenv-virtualenv
@@ -84,6 +86,7 @@ mas install 747648890  # Telegram
 mas install 1262957439 # Textual 7
 mas install 803453959  # Slack
 mas install 1569813296 # 1Password for Safari
+mas install 904280696  # Things
 
 # Python
 pip3 install --upgrade pip setuptools virtualenv

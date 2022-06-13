@@ -451,6 +451,10 @@ if [ -e /Applications/iTerm.app ]; then
     defaults write com.googlecode.iterm2 OpenTmuxWindowsIn -int 2
 fi
 
+if [ -e  /Applications/Google\ Drive.app ]; then
+    defaults write  com.google.drivefs.settings.plist PerAccountPreferences '"{\"per_account_preferences\":[{\"key\":\"103689641217199985436\",\"value\":{\"mount_point_path\":\"/Volumes/GoogleDrive-RedHat\",\"mac_smb_port\":50503}},{\"key\":\"108548510826220726943\",\"value\":{\"mount_point_path\":\"/Volumes/GoogleDrive-holser\",\"mac_smb_port\":50509}}]}"'
+fi
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
