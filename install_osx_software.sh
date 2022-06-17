@@ -80,6 +80,10 @@ brew install --cask visual-studio-code
 brew install --cask xld
 brew install --cask xquartz
 brew install --cask zoom
+
+brew tap homebrew/cask-fonts
+brew install font-sf-mono # A font for iTerm
+
 brew cleanup
 
 mas install 747648890  # Telegram

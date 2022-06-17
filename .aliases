@@ -79,6 +79,6 @@ done
 
 # Lock the screen (when going AFK)
 # https://github.com/sindresorhus/macos-lock
-alias afk="/usr/local/bin/lock"
+alias afk="pmset displaysleepnow"
 alias screensaver="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 alias cdtemp="cd $(mktemp -d)"
